@@ -1,7 +1,8 @@
 {
-  "name": "next-runtime-module-federation",
-  "version": "0.1.0",
-  "private": true,
+  "name": "next-runtime-consumer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
     "dev": "rm -rf .next && cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
     "build": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
@@ -17,8 +18,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@module-federation/nextjs-mf": "^8.8.12",
-    "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
