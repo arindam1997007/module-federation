@@ -16,9 +16,8 @@ export default function Home() {
     const loadRemoteApp = async () => {
       try {
         const module = await loadRemote("remote/button");
-        if (!module) return;
-
         console.log({ module });
+        if (!module) return;
       } catch (error) {
         console.error("Error loading the Remote:", error);
       }
