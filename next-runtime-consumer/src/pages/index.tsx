@@ -17,7 +17,7 @@ export default function Home() {
       try {
         const module = await loadRemote("remote/button");
         if (!module) return;
-        // const { inject, unmount } = module;
+
         console.log({ module });
       } catch (error) {
         console.error("Error loading the Remote:", error);
