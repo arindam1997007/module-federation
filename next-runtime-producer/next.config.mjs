@@ -1,4 +1,3 @@
-// import { ModuleFederationPlugin } from "@module-federation/enhanced/webpack";
 import { NextFederationPlugin } from "@module-federation/nextjs-mf";
 
 const nextConfig = {
@@ -8,8 +7,8 @@ const nextConfig = {
     // console.log({ config, options });
 
     if (!options.isServer) {
-      config.output.library = "producer"; // Optional: Set a name
-      config.output.libraryTarget = "var"; // or "umd" for broader compatibility
+      config.output.library = "producer";
+      config.output.libraryTarget = "var";
       config.plugins.push(
         new NextFederationPlugin({
           name: "producer",
@@ -17,7 +16,16 @@ const nextConfig = {
           exposes: {
             "./button": "./src/components/button.tsx",
           },
-          shared: {},
+          shared: {
+            react: {
+              singleton: true,
+              requiredVersion: false,
+            },
+            "react-dom": {
+              requiredVersion: false,
+              singleton: true,
+            },
+          },
           entryGlobalName: "remote",
         })
       );
